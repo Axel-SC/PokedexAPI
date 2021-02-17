@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/type_images_background"
+
+   >
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView7"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_water"
+                android:onClick="getClickType"
+                android:tag="water" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView4"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_fire"
+                android:onClick="getClickType"
+                android:tag="fire" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView3"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_grass"
+                android:onClick="getClickType"
+                android:tag="grass" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="1dp">
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView6"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_dragon"
+                android:onClick="getClickType"
+                android:tag="dragon" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView5"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_electric"
+                android:onClick="getClickType"
+                android:tag="electric" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView2"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_poison"
+                android:onClick="getClickType"
+                android:tag="poison" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="1dp">
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView8"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_fairy"
+                android:onClick="getClickType"
+                android:tag="fairy" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView13"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_flying"
+                android:onClick="getClickType"
+                android:tag="flying" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView9"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_dark"
+                android:onClick="getClickType"
+                android:tag="dark" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="1dp">
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView10"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_ghost"
+                android:onClick="getClickType"
+                android:tag="ghost" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView11"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_fighting"
+                android:onClick="getClickType"
+                android:tag="fighting" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView12"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_ground"
+                android:onClick="getClickType"
+                android:tag="ground" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="1dp">
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView19"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_normal"
+                android:onClick="getClickType"
+                android:tag="normal" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView18"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_steel"
+                android:onClick="getClickType"
+                android:tag="steel" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView17"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_rock"
+                android:onClick="getClickType"
+                android:tag="rock" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="1dp">
+
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView16"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_psychic"
+                android:onClick="getClickType"
+                android:tag="psychic" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView45"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_bug"
+                android:onClick="getClickType"
+                android:tag="bug" />
+
+            <com.example.pokedex.AxelButton.DynamicButton
+                android:id="@+id/imageView14"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="@drawable/type_ice"
+                android:onClick="getClickType"
+                android:tag="ice" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:text=" POKEMON TYPES"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="500dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="24dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

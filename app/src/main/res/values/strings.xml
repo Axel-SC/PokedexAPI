@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string-array name="pokemon_types">
+        <item>Fire</item>
+        <item>Water</item>
+        <item>Grass</item>
+        <item>Electric</item>
+        <item>Dragon</item>
+    </string-array>
+</resources>

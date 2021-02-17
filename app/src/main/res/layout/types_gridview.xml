@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridView
+        android:id="@+id/types_GridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:columnWidth="100dp"
+        android:gravity="center|bottom"
+        android:horizontalSpacing="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:numColumns="3"
+        android:stretchMode="spacingWidth"
+        android:verticalSpacing="20dp"
+        android:visibility="visible">
+    </GridView>
+
+
+    </LinearLayout>
+<!--
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="100dp"
+        app:rowCount="6"
+        app:columnCount="3">
+
+        <ImageView
+            android:id="@+id/imageFire"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/fire"
+             />
+
+        <ImageView
+            android:id="@+id/imageWater"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:layout_weight="1"
+            android:background="@drawable/water"
+
+            />
+        <ImageView
+            android:id="@+id/imageGrass"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/grass"
+
+            />
+        <ImageView
+            android:id="@+id/imageElectric"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/electric"
+
+            />
+        <ImageView
+            android:id="@+id/imageDragon"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/dragon"
+
+            />
+        <ImageView
+            android:id="@+id/imageFairy"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/fairy"
+
+            />
+        <ImageView
+            android:id="@+id/imageGhost"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/ghost"
+
+            />
+        <ImageView
+            android:id="@+id/imageDark"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/dark"
+
+            />
+        <ImageView
+            android:id="@+id/imageNormal"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/normal"
+
+            />
+        <ImageView
+            android:id="@+id/imageFighting"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/fighting"
+
+            />
+        <ImageView
+            android:id="@+id/imageFlying"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/flying"
+
+            />
+        <ImageView
+            android:id="@+id/imagePsychic"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/psychic"
+
+            />
+        <ImageView
+            android:id="@+id/imageGround"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/ground"
+
+            />
+        <ImageView
+            android:id="@+id/imageIce"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/ice"
+
+            />
+        <ImageView
+            android:id="@+id/imagePoison"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/poison"
+
+            />
+        <ImageView
+            android:id="@+id/imageBug"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/bug"
+
+            />
+        <ImageView
+            android:id="@+id/imageRock"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/rock"
+
+            />
+        <ImageView
+            android:id="@+id/imageSteel"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:background="@drawable/steel"
+
+            />
+
+
+    </androidx.gridlayout.widget.GridLayout>-->
+
