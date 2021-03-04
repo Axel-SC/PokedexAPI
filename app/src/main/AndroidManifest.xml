@@ -12,8 +12,9 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pokedex">
-        <activity android:name=".PokedexList"></activity>
-        <activity android:name=".TypesList"></activity>
+        <activity android:name=".PokemonDetailedInfo"></activity>
+        <activity android:name=".PokedexList" />
+        <activity android:name=".TypesList" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

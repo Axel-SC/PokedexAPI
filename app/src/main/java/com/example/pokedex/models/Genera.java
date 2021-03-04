@@ -4,7 +4,7 @@ public class Genera {
     private String genus;
 
 
-    public String getGenus() {
+    public String getGenus() { //It shows the name of Species
         return genus;
     }
 

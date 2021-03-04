@@ -67,6 +67,21 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDisplay"
         app:srcCompat="@drawable/btn_blau" />
 
+    <ImageButton
+        android:id="@+id/btnStore"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="92dp"
+
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDisplay"
+        app:srcCompat="@drawable/btn_blau" />
+
     <ImageView
         android:id="@+id/imgPok"
         android:layout_width="128dp"

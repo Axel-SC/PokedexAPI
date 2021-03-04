@@ -39,12 +39,15 @@ import com.example.pokedex.models.Genera;
 import com.example.pokedex.models.Moves;
 import com.example.pokedex.models.Pokemon;
 import com.example.pokedex.models.PokemonDetails;
+import com.example.pokedex.models.PokemonInfoDB;
 import com.example.pokedex.models.PokemonRespuesta;
 import com.example.pokedex.models.SpeciesDetails;
 import com.example.pokedex.models.TypeResearch;
 import com.example.pokedex.models.Types;
 import com.example.pokedex.models.WantedTypePoke;
 import com.example.pokedex.pokeapi.PokeApiService;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,12 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
     private GridAdapter gridAdapter;
     private List<typesGridView> typesList;
+    private PokemonInfoDB pokemonInfoDB;
 
     public static ImageView imgPok;
     private Retrofit retrofit;
     private static final String TAG = "POKEDEX";
     private RequestBuilder<PictureDrawable> requestBuilder;
-    private String numPkx = "1";
+    private String numPkx = "1"; //First Pokemon
     private int numAux;
     private int min=1;
     private int max=898;
@@ -87,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
     private ListaPokemonAdapter listaPokemonAdapter;
     private int offset;
     public static ImageView[] imgType;
-
+    private FirebaseDatabase rootNode;
+    private DatabaseReference reference;
     private static MainActivity myContext;
 
     public MainActivity() {
@@ -103,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Pokemons");
+        pokemonInfoDB = new PokemonInfoDB();
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -135,6 +143,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        imgPok.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Bundle extras = new Bundle();
+                extras.putString("PokeID", numPkx);
+
+                Intent toPokeDetailedInfo = new Intent(MainActivity.getInstance(), PokemonDetailedInfo.class);
+                toPokeDetailedInfo.putExtras(extras);
+                startActivity(toPokeDetailedInfo);
+                Log.i("logTest", ""+ numPkx);
+            }
+        });
 
         final Button btnRight = findViewById(R.id.btnRight);
         btnRight.setOnClickListener(new View.OnClickListener() {
@@ -175,9 +194,15 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnTypes = findViewById(R.id.btnTypes);
         btnTypes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                tipo = "fire";
-                type_research(tipo);
                 open_CustomDialog();
+            }
+        });
+
+        ImageButton btnStore = findViewById(R.id.btnStore);
+        btnStore.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                reference.child(pokemonInfoDB.getId()).setValue(pokemonInfoDB);
+                Log.i("prova", "PokemonStored");
             }
         });
 
@@ -252,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }*/
-    private void showPkmDetails(String name, String id){
+    public void showPkmDetails(String name, String id){
         showPkmSpeciesDetails(id);
         String clave="0";
 
@@ -273,12 +298,16 @@ public class MainActivity extends AppCompatActivity {
                     PokemonDetails pokemonDetails = response.body();
 
                     txtNameNumber.setText(" "+ pokemonDetails.getId()+" "+pokemonDetails.getName());
+                    pokemonInfoDB.setName(pokemonDetails.getName());
+                    pokemonInfoDB.setId(pokemonDetails.getId());
 
                     String redHeigth = "<font color='red'>Height: </font>"+pokemonDetails.getHeight();
                     txtHeight.setText(Html.fromHtml(redHeigth), TextView.BufferType.SPANNABLE);
+                    pokemonInfoDB.setHeight(pokemonDetails.getHeight());
 
                     String redWeigth ="<font color='red'>Weight: </font>"+pokemonDetails.getWeight();
                     txtWeight.setText(Html.fromHtml(" "+redWeigth), TextView.BufferType.SPANNABLE);
+                    pokemonInfoDB.setHeight(pokemonDetails.getWeight());
 
                     Glide.with(MainActivity.getInstance())
                             .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + pokemonDetails.getId() + ".png")
@@ -291,13 +320,10 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("Altura", "Texto Number " + txtHeight.getText());
 
                     //Pruebas Objetos Details, funciona bien
-                    pokemonDetails.getSpecies().getName();
-                    pokemonDetails.getSpecies().getUrl();
-                    Log.i("prova", "Nombre Specie " + pokemonDetails.getSpecies().getName());
-                    Log.i("prova", "Url Specie " + pokemonDetails.getSpecies().getUrl());//Funciona
                     for (int i = 0; i < pokemonDetails.getTypes().size(); i++) {
                         Types t= pokemonDetails.getTypes().get(i);
-                        Log.i("prova", "Nombre Nombre Typo " + t.getSlot());
+                        pokemonInfoDB.setTypes(pokemonDetails.getTypes());
+                        Log.i("prova", "Nombre Typo " + t.getSlot());
                         Log.i("prova", "Nombre Url Type " + t.getType().getName());
                         setImgType(t.getType().getName(), imgType[i]);
                         //Reset the second type if it doesnt have anyone
@@ -318,7 +344,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, " onFailure: " + t.getMessage());
             }
         });
-    }private void showPkmSpeciesDetails(String id){
+    }public void showPkmSpeciesDetails(String id){
 
         PokeApiService service = retrofit.create(PokeApiService.class);
 
@@ -331,11 +357,13 @@ public class MainActivity extends AppCompatActivity {
                     Genera g = speciesDetails.getGenera().get(7); //7 means Enlish Language in the API
                     Log.i("prova", "GENUS:  " +g.getGenus());
                     txtSpecie.setText(" "+g.getGenus());
+                    pokemonInfoDB.setGenera(g.getGenus());
                     //Hacer un for que recorra todos los textox y meta en un array todos lo que tengan en o sume un contador para saber cuantos tiene
 
                     int randomNum = new Random().nextInt((16 - 0) + 0); //0-16 means all the entries for English
                     Log.i("prova", "NumRandom " + randomNum);
                     Flavor_text_entries f = speciesDetails.getFlavor_text_entries().get(randomNum);
+                    pokemonInfoDB.setFlavor_text_entrie(f.getFlavor_text());
                     Log.i("prova", "FlavorText " + f.getFlavor_text());
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
