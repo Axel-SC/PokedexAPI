@@ -25,5 +25,4 @@ public interface PokeApiService {
     Call<TypeResearch> getTypeResearch(@Path("name") String name);
 
 
-
 }

@@ -9,6 +9,15 @@ public class PokemonDetails {
     private String weight;
     private Species species;
     private ArrayList<Types> types;
+    private ArrayList<Stats> stats;
+
+    public ArrayList<Stats> getStats() {
+        return stats;
+    }
+
+    public void setStats(ArrayList<Stats> stats) {
+        this.stats = stats;
+    }
 
     public ArrayList<Types> getTypes() {
         return types;

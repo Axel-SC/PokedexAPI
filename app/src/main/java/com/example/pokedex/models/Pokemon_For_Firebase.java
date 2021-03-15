@@ -1,10 +1,9 @@
 package com.example.pokedex.models;
 
-import java.io.Serializable;
+public class Pokemon_For_Firebase {
 
-public class Type implements Serializable {
     private String name;
-    private String url;
+    private String id;
 
     public String getName() {
         return name;
@@ -14,11 +13,11 @@ public class Type implements Serializable {
         this.name = name;
     }
 
-    public String getUrl() {
-        return url;
+    public String getId() {
+        return id;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setId(String id) {
+        this.id = id;
     }
 }

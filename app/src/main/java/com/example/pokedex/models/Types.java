@@ -1,8 +1,9 @@
 package com.example.pokedex.models;
 
 
+import java.io.Serializable;
 
-public class Types extends Type{
+public class Types extends Type implements Serializable {
     private String slot;
     private Type type;
 

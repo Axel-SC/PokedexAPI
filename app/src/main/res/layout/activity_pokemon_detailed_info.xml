@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PokemonDetailedInfo">
+    tools:context=".PokemonDetailedInfo"
+    android:background="@color/darkpalid_blue">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -14,7 +15,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
-        app:cardBackgroundColor="@android:color/holo_blue_light"
+        app:cardBackgroundColor="@color/soft_blue"
         app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -42,7 +43,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/txtNumPkm"
+                android:id="@+id/tv_PokeID"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="15dp"
@@ -51,35 +52,35 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tv_Description"
                 android:layout_width="135dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="15dp"
                 android:text="Mega-Venasaur"
-                app:layout_constraintStart_toEndOf="@+id/txtNumPkm"
+                app:layout_constraintStart_toEndOf="@+id/tv_PokeID"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/likePokemonView"
+                android:id="@+id/lottieHeart"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintStart_toEndOf="@+id/tv_Description"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-
+                app:lottie_scale="0.1"
                 app:srcCompat="@drawable/twitter_like_negro" />
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/likePokemonView2"
+                android:id="@+id/img_PokeBall"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.909"
-                app:layout_constraintStart_toEndOf="@+id/likePokemonView"
+                app:layout_constraintStart_toEndOf="@+id/lottieHeart"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 app:lottie_scale="3"
@@ -97,14 +98,14 @@
                 app:layout_constraintStart_toEndOf="@+id/imgPokemon">
 
                 <ImageView
-                    android:id="@+id/imageView21"
+                    android:id="@+id/img_Type1"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="50dp"
                     app:srcCompat="@drawable/type_grass" />
 
                 <ImageView
-                    android:id="@+id/imageView22"
+                    android:id="@+id/img_Type2"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pokedex">
+    package="com.example.pokedex" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,16 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="landscape"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pokedex">
-        <activity android:name=".PokemonDetailedInfo"></activity>
-        <activity android:name=".PokedexList" />
-        <activity android:name=".TypesList" />
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.Pokedex" >
+        <activity
+            android:name=".NavigationDrawer.PerfilNavigationDrawerActivity"
+            android:label="@string/title_activity_perfil_navigation_drawer"
+            android:theme="@style/Theme.Pokedex.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".PokemonInfoNavigation" />
+        <activity android:name=".AuthActivity" />
+        <activity android:name=".PokemonDetailedInfo" />
+        <activity android:name=".PokedexList" />
+        <activity android:name=".TypesList" />
+        <activity android:name=".MainActivity" >
+
         </activity>
     </application>
 

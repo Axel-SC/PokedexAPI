@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/pokeInfoFragment"
+    android:icon="@drawable/information_button"
+    android:title="PokeInfo"/>
+
+    <item
+        android:id="@+id/movesFragment"
+        android:icon="@drawable/sword"
+        android:title="Moves"/>
+
+    <item
+        android:id="@+id/typesChartFragment"
+        android:icon="@drawable/bar_graph"
+        android:title="TypeChart"/>
+</menu>

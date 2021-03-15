@@ -2,14 +2,11 @@ package com.example.pokedex;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.airbnb.lottie.Lottie;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class PokemonDetailedInfo extends AppCompatActivity {
@@ -20,22 +17,22 @@ public class PokemonDetailedInfo extends AppCompatActivity {
         setContentView(R.layout.activity_pokemon_detailed_info);
 
 
-        LottieAnimationView likePkm = findViewById(R.id.likePokemonView);
+        LottieAnimationView likePkm = findViewById(R.id.lottieHeart);
         Bundle extras = getIntent().getExtras();
         String pokeID = extras.getString("PokeID");
         Log.e("PruebaId", "Nombre del pokemon: " + pokeID);
         // MainActivity mainActivity = new MainActivity();
         // mainActivity.showPkmDetails(null, pokeID);
 
-        MainActivity.getInstance().showPkmDetails(null, pokeID); //Llamada correcta, metodo incorrecto. Tendria que modificarlo
+        MainActivity.getInstance().showPkmDetails(pokeID); //Llamada correcta, metodo incorrecto. Tendria que modificarlo
         MainActivity.getInstance().showPkmSpeciesDetails(pokeID);
 
 
-        TextView txtNumPkm = findViewById(R.id.txtNumPkm);
+        TextView txtNumPkm = findViewById(R.id.tv_PokeID);
         txtNumPkm.setText(pokeID);
         likePkm.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-          like = likeAnimation(likePkm, R.raw.like, like);
+          like = likeAnimation(likePkm, R.raw.bandai_dokkan, like);
 
             }
         });

@@ -12,6 +12,7 @@ android {
         applicationId "com.example.pokedex"
         minSdkVersion 16
         targetSdkVersion 30
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
 
@@ -43,10 +44,16 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'com.airbnb.android:lottie:3.6.1'
     implementation 'com.google.firebase:firebase-database:19.6.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    //implementation 'com.caverock:androidsvg-aar:1.4'
 
-//    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-auth'
+
      implementation 'com.github.ar-android:AndroidSvgLoader:1.0.2'
 
 

@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg">#bf201d</color>
+    <color name="softred">#BF3B3B</color>
+
+    <color name="spring_green">#00CF8D</color>
+    <color name="darkpalid_blue">#32496E</color>
+    <color name="soft_blue">#2196F3</color>
+    <color name="light_blue">#00CAFD</color>
+    <color name="superligth_blue">#72E7F6</color>
 </resources>
